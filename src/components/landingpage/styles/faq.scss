@@ -1,0 +1,175 @@
+@import "../../../../public/theme/_var.scss";
+
+
+.faq_section {
+    padding: 10rem 0 20rem;
+    background-image: url(../../../../public/images/FAQ.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @media (max-width:1439px) {
+        padding: 10rem 0 10rem;
+    }
+
+    @media (max-width:1199px) {
+        padding: 8rem 0 8rem;
+    }
+
+    @media (max-width:767px) {
+        padding: 5rem 0 6rem;
+    }
+
+    .container-fluid {
+        @media (min-width:1500px) {
+            padding: 0;
+            padding-left: 10.7rem;
+            padding-right: 10.7rem;
+        }
+
+        @media (max-width:1439px) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }
+
+    h2 {
+        font-size: 9rem;
+        font-weight: 300;
+        display: flex;
+        align-items: center;
+
+        @media (max-width:1439px) {
+            font-size: 7rem;
+        }
+
+        @media (max-width:767px) {
+            font-size: 5rem;
+        }
+
+        span {
+            margin-left: 2rem;
+            width: 6rem;
+            height: 6.6rem;
+            border-radius: 5.8rem;
+            border: 1px solid $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media (max-width:1439px) {
+                width: 5rem;
+                height: 5.6rem;
+            }
+
+            @media (max-width:767px) {
+                width: 4rem;
+                height: 4.6rem;
+            }
+        }
+    }
+
+    .accordions {
+        margin-left: auto;
+        max-width: 100%;
+        margin-top: 70px;
+
+        @media (max-width:1439px) {
+            margin-top: 50px;
+        }
+
+        @media (max-width:767px) {
+            margin-top: 30px;
+        }
+
+        .accordion {
+            .custom_gap_right {
+                padding-right: 50px;
+
+                @media (max-width:767px) {
+                    padding-right: 0px;
+                }
+            }
+
+            .custom_gap_left {
+                padding-left: 50px;
+
+                @media (max-width:767px) {
+                    padding-left: 0px;
+                }
+            }
+
+            .accordion-item {
+                background-color: transparent;
+                border: none;
+
+                &:not(:last-child) {
+                    margin-bottom: 1.6rem;
+                }
+
+                .accordion-header {
+
+                    button {
+                        color: $white;
+                        padding: 0;
+                        background-color: transparent;
+                        box-shadow: none !important;
+                        font-size: 26px;
+                        font-weight: 400;
+                        padding-bottom: 1.6rem;
+                        display: flex;
+                        justify-content: space-between;
+
+                        @media (max-width:1439px) {
+                            font-size: 20px;
+                        }
+
+                        @media (max-width:767px) {
+                            font-size: 18px;
+                        }
+
+                        &::after {
+                            background-image: url(../../../../public/icons/left-arrow.svg);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: contain;
+                            transform: none;
+                            margin-left: 3.4rem;
+                            width: 1.8rem;
+                            height: 2rem;
+                        }
+
+                        &.collapsed {
+                            opacity: 0.45;
+                            color: $white;
+                            border-bottom: 1px solid rgba($white, 0.45);
+
+                            &::after {
+                                background-image: url(../../../../public/icons/right-arrow.svg);
+                            }
+                        }
+                    }
+                }
+
+                .accordion-body {
+                    padding: 3.2rem 0 1.6rem;
+                    font-size: 1.8rem;
+                    line-height: 2.8rem;
+                    color: rgba($white, 0.75);
+                    font-weight: 300;
+
+                    @media (max-width:1439px) {
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
+                    }
+
+                    @media (max-width:767px) {
+                        font-size: 1.4rem;
+                        line-height: 2.2rem;
+                        padding: 1.6rem 0;
+                    }
+                }
+            }
+        }
+    }
+}

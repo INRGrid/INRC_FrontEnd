@@ -1,0 +1,108 @@
+@import '../../../../public/theme/_var.scss';
+
+.btn-style,
+.btn-primary {
+    min-height: 46px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.8rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background-color: $baseclr;
+    border: 0;
+    text-transform: capitalize;
+    transition: all ease-in-out 0.3s;
+    min-width: 150px;
+    color: $white;
+    // background-size: 100% 150%;
+
+    @media (max-width:767px) {
+        font-size: 1.4rem;
+    }
+
+    &:hover {
+        background-color: $black;
+        color: $white;
+    }
+
+    &.transparent {
+        background-color: transparent;
+        border: none;
+    }
+
+    &.white-btn {
+        background: $white;
+        color: $black;
+
+        &:hover {
+            background: $baseclr;
+            color: $white;
+        }
+    }
+
+    &.black-btn {
+        background-color: $black;
+        color: $white;
+
+        &:hover {
+            background-color: $baseclr;
+            color: $white;
+        }
+    }
+
+    &.green-btn {
+        background-color: $greenclr;
+        color: $white;
+
+        &:hover {
+            background-color: $btnhover;
+            color: $white;
+        }
+    }
+
+    &.border-btn {
+        background: transparent;
+        color: $white;
+        border:1px solid $borderclr;
+
+        &:hover {
+            background: $baseclr;
+            color: $white;
+            border-color: $baseclr;
+        }
+    }
+
+    &.green-border-btn {
+        background: $white;
+        color: $baseclr;
+        border:1px solid $baseclr;
+
+        &:hover {
+            background: $baseclr;
+            color: $white;
+            border-color: $baseclr;
+        }
+    }
+
+    .onlyIcon {
+        margin-right: 15px;
+        display: inline-flex;
+    }
+
+    &:disabled, &.disabled {
+        background: $borderclr;
+        color: $white;
+        cursor: not-allowed;
+        opacity: 1;
+    }
+}
+
+:disabled, .disabled {
+    background: $borderclr;
+    color: $white;
+    cursor: not-allowed;
+    opacity: 1;
+}

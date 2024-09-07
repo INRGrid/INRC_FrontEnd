@@ -1,0 +1,183 @@
+@import "../../../public/theme/_var.scss";
+
+.siteHeader {
+    padding: 1rem 0;
+    min-height: 85px;
+    background-color: #111111af;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1199px) {
+        z-index: 9999;
+        min-height: 7rem;
+    }
+
+    @media (max-width: 767px) {
+        min-height: 6rem;
+    }
+
+    .navbar {
+        padding: 0;
+        width: 100%;
+
+        .brandLogo {
+            display: flex;
+            align-items: center;
+
+            img {
+                max-width: 15.6rem;
+
+                @media (max-width: 1199px) {
+                    max-width: 12rem;
+                }
+            }
+        }
+
+        &-collapse {
+            .nav-link {
+                font-size: 1.8rem;
+                font-weight: 600;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+                padding: 1rem 1.8rem;
+                color: $linkclr;
+
+                &:hover,
+                &.active,
+                &:focus {
+                    color: $baseclr;
+                }
+
+                @media (max-width: 1199px) {
+                    padding: 1rem 0rem;
+                }
+            }
+
+            @media (max-width: 1199px) {
+                position: fixed;
+                left: -29rem;
+                top: 0rem;
+                background-color: #111111dc;
+                backdrop-filter: blur(14px);
+                width: 29rem;
+                padding: 2rem 2rem;
+                display: block;
+                transition: all ease-in-out 0.2s;
+                height: 100vh !important;
+                z-index: 9999;
+
+                a {
+                    display: flex;
+                    justify-content: flex-start;
+                    text-align: left;
+                }
+
+                &.show {
+                    left: 0;
+                }
+
+                .brandLogo {
+                    padding-bottom: 3rem;
+
+                    span {
+                        display: block;
+                        padding-left: 0;
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
+
+        .navbar-toggler {
+            background-color: transparent;
+            margin-left: 2rem;
+            padding: 0;
+            position: relative;
+            width: 2.6rem;
+            height: 2.2rem;
+
+            &:focus {
+                box-shadow: none;
+            }
+
+            @media (max-width: 767px) {
+                margin-left: 1rem;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 2.6rem;
+                background-color: $white;
+                height: 2px;
+                transition: all ease-in-out 0.3s;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 2.6rem;
+                background-color: $white;
+                height: 2px;
+                transition: all ease-in-out 0.3s;
+            }
+
+            .navbar-toggler-icon {
+                background-image: none;
+                height: 2px;
+                background-color: $baseclr;
+                width: 2rem;
+                transition: all ease-in-out 0.3s;
+                display: flex;
+            }
+        }
+    }
+
+    .btn-style {
+        min-height: 3.6rem;
+        min-width: 11.5rem;
+    }
+
+    &.openmenu {
+        .navbar {
+            .navbar-toggler {
+                &::after {
+                    transform: rotate(45deg) translate(-5px, -7px);
+                    background-color: $baseclr;
+                }
+
+                &::before {
+                    transform: rotate(-45deg) translate(-6px, 7px);
+                    background-color: $baseclr;
+                }
+
+                .navbar-toggler-icon {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+.sidebar_backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    background-color: #000;
+    opacity: 0.4;
+}

@@ -1,0 +1,56 @@
+@import "../../app/_ui/theme/_var.scss";
+
+.commonDropdown_style {
+    .dropdown-toggle {
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+        color: $black;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 2.2rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+        min-width: auto;
+
+        img {
+            margin-right: 1rem;
+        }
+
+        &::after {
+            // background-image: url("../../../public/assets/images/icons/down_arrow.svg");
+            // border: 0;
+            // width: 1.2rem;
+            // height: 0.6rem;
+            // background-size: 1.2rem;
+            margin-left: 1rem;
+        }
+
+        &:hover, &:focus, &.show, &.active, &:first-child:active {
+            background-color: transparent;
+            color: $black;
+        }
+    }
+
+    .dropdown-menu {
+        color: $black;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 2.2rem;
+        padding: 0.5rem 0;
+        min-width: 10rem;
+
+        a {
+            img {
+                margin-right: 5px;
+                padding: 1rem 0;
+            }
+
+            &:hover {
+                background-color: transparent;
+                color: $primary;
+            }
+        }
+    }
+}
