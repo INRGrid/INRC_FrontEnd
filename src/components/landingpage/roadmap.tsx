@@ -2,8 +2,7 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import Slider, { Settings } from 'react-slick'
-import "./styles/roadmap.scss"
-import { InfraIcon, IntergrationIcon, KYCUsersIcon, LitepaperIcon, MultiChainIcon, OffRampIcon, PartnershipsIcon, RoadmapLeft, RoadmapRight, SecurityAuditingIcon, SmartContractIcon, TeamBuildingIcon, WebsiteIcon } from '../../../public/icons/icons';
+import { InfraIcon, IntergrationIcon, KYCUsersIcon, LitepaperIcon, RoadmapLeft, RoadmapRight, SmartContractIcon, TeamBuildingIcon, WebsiteIcon } from '../../../public/icons/icons';
 
 const PrevArrow = (props: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLButtonElement> & React.ButtonHTMLAttributes<HTMLButtonElement>) => {
     return (
@@ -30,27 +29,6 @@ const Roadmap = () => {
         arrows: true,
         prevArrow: <PrevArrow />,
         nextArrow: <NextArrow />,
-
-        responsive: [
-            {
-                breakpoint: 1199,
-                settings: {
-                    slidesToShow: 6
-                }
-            },
-            {
-                breakpoint: 991,
-                settings: {
-                    slidesToShow: 3
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 3
-                }
-            }
-        ]
     }
     return (
         <section className="roadmap_section">
@@ -69,7 +47,22 @@ const Roadmap = () => {
                 } */}
                 <Slider {...settings}>
                     <div className="roadmap_box_title">
-                        <h3><span className='year'>2024</span> Q3</h3>
+                        <h3>Q1</h3>
+                    </div>
+                    <div className="up">
+                        <WebsiteIcon />
+                        <h4>Q1 Website</h4>
+                    </div>
+                    <div className="down">
+                        <LitepaperIcon />
+                        <h4>Q1 Litepaper</h4>
+                    </div>
+                    <div className="up">
+                        <SmartContractIcon />
+                        <h4>Q1 Smart Contract </h4>
+                    </div>
+                    <div className="roadmap_box_title">
+                        <h3>Q2</h3>
                     </div>
                     <div className="up">
                         <WebsiteIcon />
@@ -80,15 +73,15 @@ const Roadmap = () => {
                         <h4>Litepaper</h4>
                     </div>
                     <div className="up">
-                        <TeamBuildingIcon />
-                        <h4>Team building</h4>
-                    </div>
-                    <div className="down">
                         <SmartContractIcon />
                         <h4>Smart Contract </h4>
                     </div>
+                    <div className="down">
+                        <TeamBuildingIcon />
+                        <h4>Team building</h4>
+                    </div>
                     <div className="roadmap_box_title">
-                        <h3><span className='year'>2024</span> Q4</h3>
+                        <h3>Q3</h3>
                     </div>
                     <div className="up">
                         <InfraIcon />
@@ -101,25 +94,6 @@ const Roadmap = () => {
                     <div className="up">
                         <IntergrationIcon />
                         <h4>CBDC integration</h4>
-                    </div>
-                    <div className="down strokeIcon">
-                        <MultiChainIcon />
-                        <h4>Multi-chain on-boarding </h4>
-                    </div>
-                    <div className="up">
-                        <PartnershipsIcon />
-                        <h4>Partnerships</h4>
-                    </div>
-                    <div className="roadmap_box_title">
-                        <h3><span className='year'>FY25</span> Q1</h3>
-                    </div>
-                    <div className="down strokeIcon">
-                        <OffRampIcon />
-                        <h4>On-ramp and off-ramp gateways </h4>
-                    </div>
-                    <div className="up strokeIcon">
-                        <SecurityAuditingIcon />
-                        <h4>Security Auditing</h4>
                     </div>
                 </Slider>
             </Container>

@@ -1,64 +1,36 @@
-"use client";
+"use client"; 
 import Link from "next/link";
-import { useRef, useState } from "react";
-import { Container, Navbar } from "react-bootstrap"
-import "./landingheader.scss"
-import Image from "next/image";
-import logo from "../../../public/images/logo.svg"
-import { JoinWaitlist } from "../common/Modal/JoinWaitlist/JoinWaitlist";
+import { useState } from "react";
+import { Container } from "react-bootstrap"
+import JoinWalletModal from "./JoinWalletModal";
 
 const LandingHeader = () => {
-    const [show, setShow] = useState(false);
-    const [isActive, setIsActive] = useState(false);
-    const toggleClass = () => {
-        setIsActive(!isActive);
-    };
 
-    const ref: any = useRef();
-    const onclick = () => {
-        if (ref.current && document.body.clientWidth < 1199) {
-            ref.current.click();
-        }
-    };
+    const [showModal, setShowModal] = useState(false);
 
-    const scrollToSection = (sectionId: string) => {
-        const section = document.querySelector(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-        }
-        onclick();  // Close the menu after clicking on the link
-    };
+    const handleShowModal = () => setShowModal(true);
+    const handleCloseModal = () => setShowModal(false);
 
     return (
         <>
-            <header className={isActive ? 'siteHeader openmenu' : 'siteHeader'}>
-                <Navbar expand="xl" className="w-100">
-                    <Container className="">
-                        <Link href="/" className="brandLogo">
-                            <Image src={logo} alt={logo} className="d-inline-block" />
+            <header className="landing_header">
+                <Container>
+                    <div className="header_in">
+                        <Link className="logo" href={"/"}>
+                        <img src="/images/Main_logo.png" alt="Logo" />
                         </Link>
-                        <Navbar.Collapse className="justify-content-end">
-                            <Link onClick={() => scrollToSection("#faq")} className="nav-link" href={"#faq"}>
-                                FAQ
-                            </Link>
-                            <Link onClick={() => scrollToSection("#about")} className="nav-link" href={"#About"}>
-                                About
-                            </Link>
-                            <Link onClick={onclick}  href={""} className="nav-link">
-                                Launch App
-                            </Link>
-                        </Navbar.Collapse>
-                        {isActive && <div onClick={onclick} className={`${isActive ? 'active' : ''} sidebar_backdrop d-xl-none`} />}
-                        <div className="d-flex align-items-center justify-content-between ms-4">
-                            <button onClick={() => setShow(true)} className="btn-style">Join Waitlist</button>
-                            <Navbar.Toggle ref={ref} onClick={toggleClass} />
+                        <div className="menu_list">
+                            <li>FAQ</li>
+                            <li>About</li>
+                            <li>Launch App</li>
+                            <li><button onClick={handleShowModal}>Join Waitlist</button></li>
                         </div>
-                    </Container>
-                </Navbar>
+                    </div>
+                </Container>
             </header>
-            <JoinWaitlist show={show} handleClose={() => setShow(false)} />
+            <JoinWalletModal show={showModal} handleClose={handleCloseModal} />
         </>
     )
 }
 
-export default LandingHeader;
+export default LandingHeader

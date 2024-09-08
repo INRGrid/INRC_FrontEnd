@@ -11,16 +11,14 @@ import React from 'react'
 const page = () => {
     return (
         <>
-            <div className='home_page'>
-                <LandingHeader />
-                <Banner />
-                <BackedBy />
-                <WhyChoose />
-                <ForBusiness />
-                <Roadmap />
-                <Faq />
-                <Footer />
-            </div>
+            <LandingHeader />
+            <Banner />
+            <BackedBy />
+            <WhyChoose />
+            <ForBusiness />
+            <Roadmap />
+            <Faq />
+            <Footer />
         </>
     )
 }

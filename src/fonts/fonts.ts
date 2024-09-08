@@ -20,6 +20,11 @@ export const aileron = localFont({
             style: 'normal',
         },
         {
+            path: '../../public/fonts/Aileron-Italic.woff2',
+            weight: 'normal',
+            style: 'normal',
+        },
+        {
             path: '../../public/fonts/Aileron-Bold.woff2',
             weight: 'bold',
             style: 'normal',

@@ -2,8 +2,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import { TopRightArrow } from '../../../public/icons/icons'
-import "./footer.scss"
+import { TopRightArrow, UpArrow } from '../../../public/icons/icons'
 
 const Footer = () => {
     return (
@@ -19,37 +18,38 @@ const Footer = () => {
                             <li><Link href="" >Home</Link></li>
                             <li><Link href="">Blog</Link></li>
                             <li><Link href="">About Us</Link></li>
-                            <li><Link href="" className='ps-xl-0'>Team</Link></li>
+                            <li><Link href="" className='ps-0'>Team</Link></li>
                             <li><Link href="">Contacts</Link></li>
                         </ul>
                     </div>
                     <div className="footer_right">
                         <ul>
-                            {/* <li>
+                            <li>
                                 <h4>Contact Us</h4>
                                 <Link href="">+91 6274750937</Link>
-                            </li> */}
-                           
-                            <li>
-                                <h4>Address</h4>
-                                <Link href="" className='text_small'>Dwarka,New Delhi-110078</Link>
                             </li>
                             <li>
                                 <h4>Email</h4>
-                                <Link href="" className='text_small'>info@inrstable.finance</Link>
+                                <Link href="">info@inrstable.finance</Link>
+                            </li>
+                            <li>
+                                <h4>Address</h4>
+                                <Link href="">Dwarka,New Delhi-110078</Link>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                {/* <div className="footer_bottom">
+                <div className="footer_bottom">
                     <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}><UpArrow /></button>
                     <div className="explore_more">
                         <h3>Explore <br />
                             our Story</h3>
                     </div>
-                </div> */}
-                <p className="copyright"> © {new Date().getFullYear()} — Copyright,  INR Grid Stable</p>
+                </div>
+                <p className="copyright">
+                    © {new Date().getFullYear()} — Copyright,  INRCNFT
+                </p>
             </Container>
         </footer>
     )
